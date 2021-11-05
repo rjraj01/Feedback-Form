@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Feedback Form</title>
+    <link rel= "stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        {% if message %}
+        <p>{{message | safe}}</p>            
+        {% endif %}
+        <fieldset>
+        <img src="#" alt="GIMT" class="LOGO">
+        <form action="/submit" method="POST">
+        <div class="form-grp">
+            <h3>Student Name:</h3><input type="text" placeholder="Enter your Name" id="st_name" name="st_name">
+        </div>
+        <div class="form-grp">
+            <h3>Location:</h3>
+            <select name= "loc">
+                <option>-Select-</option>
+                <option  value="Guwahati">Guwahati</option>
+                <option  value="Tezpur">Tezpur</option>                
+            </select>
+        </div>
+        <div class="form-grp">
+            <h3>Please Rate Here:</h3>
+            <input type="radio" name="rating" id="rating" value="1">Very Poor
+            <input type="radio" name="rating" id="rating" value="2">Poor
+            <input type="radio" name="rating" id="rating" value="3">Average
+            <input type="radio" name="rating" id="rating" value="4">Good
+            <input type="radio" name="rating" id="rating" value="5" checked>Very Good
+        </div>
+        <div class="form-grp">
+            <h3>Comment Below:</h3>
+            <textarea name="comments" id="comments" cols="100" rows="10" placeholder="Tell us about what you liked or disliked about us"></textarea>
+        </div>
+        <div class="form-grp">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+        </form>
+    </fieldset>
+    </div>
+</body>
+</html>
